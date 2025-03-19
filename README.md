@@ -41,21 +41,34 @@ Loco positioning system:
 * you need  the 4x tripods
 
 Equipment for transferable optitrack arena:
-|![images](https://github.com/user-attachments/assets/d632b541-b44b-470d-b412-8c321890e185)||![cullmann-flexx-tabletop-set-komplet-cros-4007134420601_1](https://github.com/user-attachments/assets/48150a0d-dc89-434c-9fb0-4dfd578d5f0d)||![standFloor](https://github.com/user-attachments/assets/daecc4f0-d363-4129-b76c-9e8f02b1be12)||*aaaaa *bbbbb *ccccc|
+|![images](https://github.com/user-attachments/assets/d632b541-b44b-470d-b412-8c321890e185)||![cullmann-flexx-tabletop-set-komplet-cros-4007134420601_1](https://github.com/user-attachments/assets/48150a0d-dc89-434c-9fb0-4dfd578d5f0d)||![standFloor](https://github.com/user-attachments/assets/daecc4f0-d363-4129-b76c-9e8f02b1be12)||<ul><li>POE switch</li><li>router</li><li>USB optitrack key</li><li>long ethernet cables</li></ul>|
 | :-: | - | :-: | - | :-: |- | :-: |
-| Min 4x Optitrack cameras |  | Min 4x Optitrack camera holdes | | Min 4x tripods  |
-
-
--cfclient
--joystick ctrl
--loco positioning 
--optitrack
--optical flow 
--AI deck - jlink, change the access point
--multi ranger deck
--LED deck
+| Min 4x Optitrack cameras |  | Min 4x Optitrack camera holders | | Min 4x tripods  |
 
 Spare parts
-charging crazyflies
+|![propellers-47-17-black-1024px](https://github.com/user-attachments/assets/48bbc513-5c98-4c06-b43f-79e378954b8c)||![4-x-7-mm-dc-motor-pack-for-crazyflie-2x](https://github.com/user-attachments/assets/e59019b1-2144-448e-9a1c-b716a35d7790)||![4-spare-crazyflie-motor-mounts-7-mm](https://github.com/user-attachments/assets/68743516-2af6-4275-9bd5-3e278fb76c1c)|
+| :-: | - | :-: | - | :-: |
+| Propellers (small R is for the counterclockwise direction)|  | Motors | | Motor mounts |
 
-couple of resolved and unresolved problems:
+- dodati linkove
+
+## Setting up and working with positioning systems
+### Optical flow deck
+### Loco positioning 
+### Optitrack
+
+## Starting with crazyflies 
+about cfclient
+
+### Joystick control
+
+### Charging crazyflies
+
+## Working with other decks
+### AI deck - jlink, change the access point
+### multi ranging deck
+### LED deck
+
+
+
+# Troubleshooting:
