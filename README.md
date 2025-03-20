@@ -2,7 +2,7 @@
 
 This wiki serves as a source of information about crazyflies bundle we use in LARICS Laboratory to students and researchers. It contains overview of students' projects with crazyflies and instructions on how to use the belonging equipment in the lab alongside the:  
 * [docker](https://github.com/larics/docker_files/tree/master/ros2/ros2-humble/crazyflies-sitl) with CrazySim SITL and crazyswarm2 ROS2 package. Ubuntu 22.04. and ROS2 Humble based with ros1 bridge option
-* [docker](https://github.com/larics/docker_files/tree/master/ros2/ros2-jazzy/crazyflies) with the latest crazyflies-firmware, cfclient and crazyswarm2 ROS2 package to communicate with or to deploy your code on the real crazyflies. Ubuntu 22.04. and ROS2 Jazzy based
+* [docker](https://github.com/larics/docker_files/tree/master/ros2/ros2-jazzy/crazyflies) with the latest crazyflies-firmware, cfclient and crazyswarm2 ROS2 package to communicate with or to deploy your code on the real crazyflies. Ubuntu 24.04. and ROS2 Jazzy based
 
 Wiki serves da ne zamijeni skroz izvore informacija već da okupi na jednom mjestu sve probleme koje smo imali, kako ih se riješilo, lakše snalaženje i preusmjeravanje na druge značajne izvore. If there are any problems regarding info on this page, some mistakes are made, or just want to offer a solution to some problems, please open an issue or start a discussion. If you are too shy, you can send an e-mail to marijana.peti@fer.hr. :) 
 
@@ -53,7 +53,10 @@ Spare parts
 - dodati linkove
 
 ## Setting up and working with positioning systems
+It is possible to fly in different localization systems with crazyflies. The detailed overview of positioning systems is [here](https://www.bitcraze.io/documentation/system/positioning/)
 ### Optical flow deck
+With only using optical flow deck on crazyflies, it is possible to fly and hover without using external anchors. This deck installs on the bottom of the crazyflies and uses camera module that use ground texture and visible features to determine ground velocity of the ccrazyflie. Additinally, it has ToF ranging sensor that measures the distance to the ground. 
+There are couple of things that need to be careful about when using this deck, and they are explained [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/#measurement-details) and [here](https://www.bitcraze.io/2023/11/go-with-the-flow-relative-positioning-with-the-flow-deck/). Also keep in mind that it is expected to fly over the flat floor, otherwise, because of the distance sensor the height will fluctuate.
 ### Loco positioning 
 ### Optitrack
 
