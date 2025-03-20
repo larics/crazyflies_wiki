@@ -51,23 +51,36 @@ Spare parts
 | Propellers (small R is for the counterclockwise direction)|  | Motors | | Motor mounts |
 
 - dodati linkove
-
-## Setting up and working with positioning systems
-It is possible to fly in different localization systems with crazyflies. The detailed overview of positioning systems is [here](https://www.bitcraze.io/documentation/system/positioning/)
-### Optical flow deck
-With only using optical flow deck on crazyflies, it is possible to fly and hover without using external anchors. This deck installs on the bottom of the crazyflies and uses camera module that use ground texture and visible features to determine ground velocity of the ccrazyflie. Additinally, it has ToF ranging sensor that measures the distance to the ground. 
-There are couple of things that need to be careful about when using this deck, and they are explained [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/#measurement-details) and [here](https://www.bitcraze.io/2023/11/go-with-the-flow-relative-positioning-with-the-flow-deck/). Also keep in mind that it is expected to fly over the flat floor, otherwise, because of the distance sensor the height will fluctuate.
-### Loco positioning 
-### Optitrack
-
 ## Starting with crazyflies 
 about cfclient
 
 ### Joystick control
 
 ### Charging crazyflies
+Currently we use only 250mAh batteries. Batteries can be charged while they are plugged in the crazyflies, by connect the crazyflies to Laptop with USB-microUSB. 
 
-## Working with other decks
+## Setting up and working with positioning systems
+It is possible to fly in different localization systems with crazyflies. The detailed overview of positioning systems is [here](https://www.bitcraze.io/documentation/system/positioning/)
+### Optical flow deck
+With only using optical flow deck on crazyflies, it is possible to fly and hover without using external anchors. This deck installs on the bottom of the crazyflies and uses camera module that use ground texture and visible features to determine ground velocity of the ccrazyflie. Additinally, it has ToF ranging sensor that measures the distance to the ground. 
+There are couple of things that need to be careful about when using this deck, and they are explained [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/#measurement-details) and [here](https://www.bitcraze.io/2023/11/go-with-the-flow-relative-positioning-with-the-flow-deck/). Also keep in mind that it is expected to fly over the flat floor, otherwise, because of the distance sensor the UAV might fluctuate and become unstable. 
+
+### Loco positioning 
+The Loco positioning system is a positioning system based on Ultra Wide Band (UWB) radio frequencies. It is used to find the absolute 3D position in the space. It consists of a set of anchors (Loco poitioning nodes) positioned in the room whose locations should be known. The other part is the Loco positioning deck that is attached to the crazyflies. You can check more information on this [link](https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/). Loco positioniing nodes are powered by power banks and should be set in the desired places. There are several modes of operation, and the recommended one is TDoA 3.  . You can check it by running `cfclient` and connecting to the UAV that has a Loco positioning deck. A detailed explanation is given [here][https://www.bitcraze.io/documentation/tutorials/getting-started-with-loco-positioning-system/]. In the image below is an example of a setup we have in Ericsson with 8 anchors.
+
+![loco_anchor](https://github.com/user-attachments/assets/572e6334-c53f-4a6f-8385-c7bae0f2e055)
+
+- reconfiguring red ones in cf client
+
+### Optitrack
+- what it is
+- computer, IP, setup... single marker
+- 
+
+
+
+
+## Adding other decks
 ### AI deck - jlink, change the access point
 ### multi ranging deck
 ### LED deck
