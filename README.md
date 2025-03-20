@@ -58,16 +58,15 @@ Spare parts
 Crazyflies communicate with a computer using Crazyradio (radio dongle) that works on 2.4 GHz. One dongle can communicate with several Crazyflies simultaneously. When using the dongle for the first time, you need to [flash](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/#enter-bootloader-mode) it. This is only required if the dongle is taken straight out of the box for the first time. 
 
 ### cfclient
-Crazyflie client (`cfclient`) is the default UI for controlling the Crazyflie, flashing firmware, setting parameters and logging data. For more info check this [link](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/). The crazyflie client can be started by typing the command: `cfclient` or `python3 -m cfclient.gui` .  It can be used to change the address of a crazyflie, check the battery status, update firmware...
+Crazyflie client (`cfclient`) is the default UI for controlling the Crazyflie, flashing firmware, setting parameters and logging data. For more info check this [link](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/). The crazyflie client can be started by typing the command: `cfclient` or `python3 -m cfclient.gui`.  It can be used to change the address of a crazyflie, check the battery status, update firmware...
 
 #### Changing the address
-Crazyflies communicate with a computer using Crazyradio (radio dongle - Fig. \ref{fig:crazyradio}) that works on 2.4 GHz. One dongle can communicate with several Crazyflies simultaneously. When using the dongle for the first time, you need to \href{https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/#enter-bootloader-mode}{flash} it. This is only required if the dongle is taken straight out of the box for the first time. 
+To change the address of a crazyflie, follow the instructions [here](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/#firmware-configuration). It is recommended to use 2Mbit/s radio bandwidth, and if using different channels, they should be 2 channels apart at least . If two crazyflies are on the same channel they should have different radio address. Since crazyradio is working on the 2.4 GHz, the same as the wi-fi, there fore it is recommended to set the radio channel to 90 and above, in order to avoid interference with wi-fi.
 
 #### Joystick control
 After starting the cfclient and connecting to one of the crazyflies you can setup the joystick following the instructions on this [link](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/#input-devices). Crazyflies can be controlled with joystick without any deck on it, however it cannot hold the height and hover. It is better to add optical flow deck this will enable holding the altitude (hovering) and the assist mode dropdown menu in the cfclient should be set to `Hover`. 
 
 ![Crazyflies-cfclient](https://github.com/user-attachments/assets/5d9fbad4-358a-4dc5-81d1-60db4d814f49)
-
 
 One of the example mappings for a joystick is shown in the image below:
 ![Crazyflies - joystick control](https://github.com/user-attachments/assets/8a79888e-8bbe-4c84-a057-2b13d5e96ae1)
@@ -88,8 +87,10 @@ The Loco positioning system is a positioning system based on Ultra Wide Band (UW
 ![loco_anchor](https://github.com/user-attachments/assets/572e6334-c53f-4a6f-8385-c7bae0f2e055)
 
 - reconfiguring red ones in cf client and optical flow
+- upis pozicija manual
 
 ### Optitrack
+Optitrack is one of the motion capture systems, which uses IR cameras to detect the markers attached to the object that is tracked.
 - what it is
 - computer, IP, setup... single marker
 - 
