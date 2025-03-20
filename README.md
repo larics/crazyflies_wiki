@@ -51,13 +51,30 @@ Spare parts
 | Propellers (small R is for the counterclockwise direction)|  | Motors | | Motor mounts |
 
 - dodati linkove
+- flashing the dongle, usb permissions
 ## Starting with crazyflies 
-about cfclient
 
-### Joystick control
+### Crazyflies dongle
+Crazyflies communicate with a computer using Crazyradio (radio dongle) that works on 2.4 GHz. One dongle can communicate with several Crazyflies simultaneously. When using the dongle for the first time, you need to [flash](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/#enter-bootloader-mode) it. This is only required if the dongle is taken straight out of the box for the first time. 
 
+### cfclient
+Crazyflie client (`cfclient`) is the default UI for controlling the Crazyflie, flashing firmware, setting parameters and logging data. For more info check this [link](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/). The crazyflie client can be started by typing the command: `cfclient` or `python3 -m cfclient.gui` .  It can be used to change the address of a crazyflie, check the battery status, update firmware...
+
+#### Changing the address
+Crazyflies communicate with a computer using Crazyradio (radio dongle - Fig. \ref{fig:crazyradio}) that works on 2.4 GHz. One dongle can communicate with several Crazyflies simultaneously. When using the dongle for the first time, you need to \href{https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/#enter-bootloader-mode}{flash} it. This is only required if the dongle is taken straight out of the box for the first time. 
+
+#### Joystick control
+After starting the cfclient and connecting to one of the crazyflies you can setup the joystick following the instructions on this [link](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/#input-devices). Crazyflies can be controlled with joystick without any deck on it, however it cannot hold the height and hover. It is better to add optical flow deck this will enable holding the altitude (hovering) and the assist mode dropdown menu in the cfclient should be set to `Hover`. 
+
+![Crazyflies-cfclient](https://github.com/user-attachments/assets/5d9fbad4-358a-4dc5-81d1-60db4d814f49)
+
+
+One of the example mappings for a joystick is shown in the image below:
+![Crazyflies - joystick control](https://github.com/user-attachments/assets/8a79888e-8bbe-4c84-a057-2b13d5e96ae1)
+
+For a crazyflies with optical flow to hover, the assisted mode button should be pressed during the flight, in order to hold the altitude. 
 ### Charging crazyflies
-Currently we use only 250mAh batteries. Batteries can be charged while they are plugged in the crazyflies, by connect the crazyflies to Laptop with USB-microUSB. 
+Crazyflies have attached a small 250 mAh battery. Usually, with a full battery, the UAV has a flight time of approx. 7 minutes. However, this time can significantly reduce if there are additional decks on it. The full battery is around 4.1 V, and you shouldn't start flying if it falls below 3.7 V. These voltages are measured when the UAV is landed, during the flight it is normal that voltage drops up to 3.2. If it falls below 3.1V please land the UAV and replace the battery. You can check the battery in `cfclient`. Batteries can be charged while they are plugged in the crazyflies, by connecting the crazyflies to laptop with USB-microUSB and the crazyflie should be on. You can also replace the batteries, connect the empty ones to the charger. This way you can charge multiple batteries in paralel by connecting the charges in the USB-hub.
 
 ## Setting up and working with positioning systems
 It is possible to fly in different localization systems with crazyflies. The detailed overview of positioning systems is [here](https://www.bitcraze.io/documentation/system/positioning/)
@@ -66,11 +83,11 @@ With only using optical flow deck on crazyflies, it is possible to fly and hover
 There are couple of things that need to be careful about when using this deck, and they are explained [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-flow-deck/#measurement-details) and [here](https://www.bitcraze.io/2023/11/go-with-the-flow-relative-positioning-with-the-flow-deck/). Also keep in mind that it is expected to fly over the flat floor, otherwise, because of the distance sensor the UAV might fluctuate and become unstable. 
 
 ### Loco positioning 
-The Loco positioning system is a positioning system based on Ultra Wide Band (UWB) radio frequencies. It is used to find the absolute 3D position in the space. It consists of a set of anchors (Loco poitioning nodes) positioned in the room whose locations should be known. The other part is the Loco positioning deck that is attached to the crazyflies. You can check more information on this [link](https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/). Loco positioniing nodes are powered by power banks and should be set in the desired places. There are several modes of operation, and the recommended one is TDoA 3.  . You can check it by running `cfclient` and connecting to the UAV that has a Loco positioning deck. A detailed explanation is given [here][https://www.bitcraze.io/documentation/tutorials/getting-started-with-loco-positioning-system/]. In the image below is an example of a setup we have in Ericsson with 8 anchors.
+The Loco positioning system is a positioning system based on Ultra Wide Band (UWB) radio frequencies. It is used to find the absolute 3D position in the space. It consists of a set of anchors (Loco poitioning nodes) positioned in the room whose locations should be known. The other part is the Loco positioning deck that is attached to the crazyflies. You can check more information on this [link](https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/). Loco positioniing nodes are powered by power banks and should be set in the desired places. There are several modes of operation, and the recommended one is TDoA 3.  . You can check it by running `cfclient` and connecting to the UAV that has a Loco positioning deck. A detailed explanation is given [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-loco-positioning-system/). In the image below is an example of a setup we have in Ericsson with 8 anchors.
 
 ![loco_anchor](https://github.com/user-attachments/assets/572e6334-c53f-4a6f-8385-c7bae0f2e055)
 
-- reconfiguring red ones in cf client
+- reconfiguring red ones in cf client and optical flow
 
 ### Optitrack
 - what it is
@@ -86,5 +103,5 @@ The Loco positioning system is a positioning system based on Ultra Wide Band (UW
 ### LED deck
 
 
-
+# Crazyswarm2
 # Troubleshooting:
